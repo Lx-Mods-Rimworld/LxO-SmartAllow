@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Settings -->
+  <SA_Enabled>Activar Smart Allow</SA_Enabled>
+  <SA_Enabled_Desc>Permitir automáticamente objetos prohibidos según las reglas de categoría.</SA_Enabled_Desc>
+  <SA_WaitForCombat>Esperar al fin del combate</SA_WaitForCombat>
+  <SA_WaitForCombat_Desc>Pausar la autorización automática durante incursiones activas. Los objetos se permiten una vez que todos los hostiles hayan caído o se hayan ido.</SA_WaitForCombat_Desc>
+  <SA_HomeZoneOnly>Solo zona del hogar</SA_HomeZoneOnly>
+  <SA_HomeZoneOnly_Desc>Solo permitir automáticamente objetos dentro de la zona del hogar.</SA_HomeZoneOnly_Desc>
+
+  <!-- Categories -->
+  <SA_CategoryHeader>Permitir automáticamente por categoría:</SA_CategoryHeader>
+  <SA_AllowWeapons>Armas</SA_AllowWeapons>
+  <SA_AllowApparel>Vestimenta</SA_AllowApparel>
+  <SA_AllowDrugs>Drogas</SA_AllowDrugs>
+  <SA_AllowFood>Comida</SA_AllowFood>
+  <SA_AllowResources>Recursos (acero, madera, componentes...)</SA_AllowResources>
+  <SA_AllowCorpses>Cadáveres</SA_AllowCorpses>
+  <SA_AllowChunks>Trozos de piedra y escoria</SA_AllowChunks>
+  <SA_AllowBodyParts>Partes del cuerpo y biónica</SA_AllowBodyParts>
+  <SA_AllowMedicine>Medicina</SA_AllowMedicine>
+  <SA_AllowArtifacts>Artefactos y objetos especiales</SA_AllowArtifacts>
+  <SA_AllowOther>Todo lo demás</SA_AllowOther>
+
+  <!-- Hints -->
+  <SA_DoubleForbidHint>Consejo: Prohíbe un objeto dos veces para mantenerlo prohibido permanentemente. Smart Allow dejará de tocarlo.</SA_DoubleForbidHint>
+
+</LanguageData>

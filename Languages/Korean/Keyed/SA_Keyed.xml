@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Settings -->
+  <SA_Enabled>Smart Allow 활성화</SA_Enabled>
+  <SA_Enabled_Desc>카테고리 규칙에 따라 금지된 아이템을 자동으로 허용합니다.</SA_Enabled_Desc>
+  <SA_WaitForCombat>전투 종료까지 대기</SA_WaitForCombat>
+  <SA_WaitForCombat_Desc>습격 중에는 자동 허용을 보류합니다. 모든 적이 쓰러지거나 사라진 후 아이템이 허용됩니다.</SA_WaitForCombat_Desc>
+  <SA_HomeZoneOnly>홈 구역만</SA_HomeZoneOnly>
+  <SA_HomeZoneOnly_Desc>홈 구역 내의 아이템만 자동 허용합니다.</SA_HomeZoneOnly_Desc>
+
+  <!-- Categories -->
+  <SA_CategoryHeader>카테고리별 자동 허용:</SA_CategoryHeader>
+  <SA_AllowWeapons>무기</SA_AllowWeapons>
+  <SA_AllowApparel>의복</SA_AllowApparel>
+  <SA_AllowDrugs>약물</SA_AllowDrugs>
+  <SA_AllowFood>음식</SA_AllowFood>
+  <SA_AllowResources>자원 (철, 목재, 부품...)</SA_AllowResources>
+  <SA_AllowCorpses>시체</SA_AllowCorpses>
+  <SA_AllowChunks>석재 덩어리 및 슬래그</SA_AllowChunks>
+  <SA_AllowBodyParts>신체 부위 및 생체공학</SA_AllowBodyParts>
+  <SA_AllowMedicine>의약품</SA_AllowMedicine>
+  <SA_AllowArtifacts>유물 및 특수 아이템</SA_AllowArtifacts>
+  <SA_AllowOther>기타 모든 것</SA_AllowOther>
+
+  <!-- Hints -->
+  <SA_DoubleForbidHint>팁: 아이템을 두 번 금지하면 영구적으로 금지 상태를 유지합니다. Smart Allow가 더 이상 해당 아이템을 건드리지 않습니다.</SA_DoubleForbidHint>
+
+</LanguageData>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Settings -->
+  <SA_Enabled>Включить Smart Allow</SA_Enabled>
+  <SA_Enabled_Desc>Автоматически разрешать запрещённые предметы на основе правил категорий.</SA_Enabled_Desc>
+  <SA_WaitForCombat>Ждать окончания боя</SA_WaitForCombat>
+  <SA_WaitForCombat_Desc>Приостановить автоматическое разрешение во время набегов. Предметы будут разрешены после того, как все враги будут побеждены или уйдут.</SA_WaitForCombat_Desc>
+  <SA_HomeZoneOnly>Только в домашней зоне</SA_HomeZoneOnly>
+  <SA_HomeZoneOnly_Desc>Автоматически разрешать предметы только в пределах домашней зоны.</SA_HomeZoneOnly_Desc>
+
+  <!-- Categories -->
+  <SA_CategoryHeader>Автоматическое разрешение по категориям:</SA_CategoryHeader>
+  <SA_AllowWeapons>Оружие</SA_AllowWeapons>
+  <SA_AllowApparel>Одежда</SA_AllowApparel>
+  <SA_AllowDrugs>Наркотики</SA_AllowDrugs>
+  <SA_AllowFood>Еда</SA_AllowFood>
+  <SA_AllowResources>Ресурсы (сталь, дерево, компоненты...)</SA_AllowResources>
+  <SA_AllowCorpses>Трупы</SA_AllowCorpses>
+  <SA_AllowChunks>Каменные обломки и шлак</SA_AllowChunks>
+  <SA_AllowBodyParts>Части тела и бионика</SA_AllowBodyParts>
+  <SA_AllowMedicine>Медикаменты</SA_AllowMedicine>
+  <SA_AllowArtifacts>Артефакты и особые предметы</SA_AllowArtifacts>
+  <SA_AllowOther>Всё остальное</SA_AllowOther>
+
+  <!-- Hints -->
+  <SA_DoubleForbidHint>Совет: запретите предмет дважды, чтобы навсегда сохранить его запрещённым. Smart Allow больше не будет его трогать.</SA_DoubleForbidHint>
+
+</LanguageData>

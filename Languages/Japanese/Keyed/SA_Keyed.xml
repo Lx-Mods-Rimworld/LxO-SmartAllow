@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Settings -->
+  <SA_Enabled>Smart Allow を有効にする</SA_Enabled>
+  <SA_Enabled_Desc>カテゴリルールに基づいて、禁止されたアイテムを自動的に許可します。</SA_Enabled_Desc>
+  <SA_WaitForCombat>戦闘終了まで待機</SA_WaitForCombat>
+  <SA_WaitForCombat_Desc>襲撃中は自動許可を保留します。すべての敵が倒されるか撤退した後にアイテムが許可されます。</SA_WaitForCombat_Desc>
+  <SA_HomeZoneOnly>ホームゾーンのみ</SA_HomeZoneOnly>
+  <SA_HomeZoneOnly_Desc>ホームゾーン内のアイテムのみ自動許可します。</SA_HomeZoneOnly_Desc>
+
+  <!-- Categories -->
+  <SA_CategoryHeader>カテゴリ別の自動許可：</SA_CategoryHeader>
+  <SA_AllowWeapons>武器</SA_AllowWeapons>
+  <SA_AllowApparel>衣服</SA_AllowApparel>
+  <SA_AllowDrugs>ドラッグ</SA_AllowDrugs>
+  <SA_AllowFood>食料</SA_AllowFood>
+  <SA_AllowResources>資源（鉄、木材、コンポーネント...）</SA_AllowResources>
+  <SA_AllowCorpses>死体</SA_AllowCorpses>
+  <SA_AllowChunks>石塊とスラグ</SA_AllowChunks>
+  <SA_AllowBodyParts>身体部位とバイオニクス</SA_AllowBodyParts>
+  <SA_AllowMedicine>医薬品</SA_AllowMedicine>
+  <SA_AllowArtifacts>アーティファクトと特殊アイテム</SA_AllowArtifacts>
+  <SA_AllowOther>その他すべて</SA_AllowOther>
+
+  <!-- Hints -->
+  <SA_DoubleForbidHint>ヒント：アイテムを2回禁止すると、永久に禁止状態を維持できます。Smart Allow はそのアイテムに触れなくなります。</SA_DoubleForbidHint>
+
+</LanguageData>

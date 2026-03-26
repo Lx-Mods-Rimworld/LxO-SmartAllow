@@ -17,7 +17,7 @@
   <SA_AllowFood>食物</SA_AllowFood>
   <SA_AllowResources>资源（钢铁、木材、零部件...）</SA_AllowResources>
   <SA_AllowCorpses>尸体</SA_AllowCorpses>
-  <SA_AllowChunks>石块和�ite渣</SA_AllowChunks>
+  <SA_AllowChunks>石块和熔渣</SA_AllowChunks>
   <SA_AllowBodyParts>身体部件和仿生体</SA_AllowBodyParts>
   <SA_AllowMedicine>医药</SA_AllowMedicine>
   <SA_AllowArtifacts>神器和特殊物品</SA_AllowArtifacts>
