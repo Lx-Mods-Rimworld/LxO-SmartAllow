@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Settings -->
+  <SA_Enabled>启用 Smart Allow</SA_Enabled>
+  <SA_Enabled_Desc>根据类别规则自动解禁被禁止的物品。</SA_Enabled_Desc>
+  <SA_WaitForCombat>等待战斗结束</SA_WaitForCombat>
+  <SA_WaitForCombat_Desc>在袭击期间暂停自动解禁。所有敌人被击败或离开后才会解禁物品。</SA_WaitForCombat_Desc>
+  <SA_HomeZoneOnly>仅限家园区域</SA_HomeZoneOnly>
+  <SA_HomeZoneOnly_Desc>仅自动解禁家园区域内的物品。</SA_HomeZoneOnly_Desc>
+
+  <!-- Categories -->
+  <SA_CategoryHeader>按类别自动解禁：</SA_CategoryHeader>
+  <SA_AllowWeapons>武器</SA_AllowWeapons>
+  <SA_AllowApparel>服装</SA_AllowApparel>
+  <SA_AllowDrugs>药物</SA_AllowDrugs>
+  <SA_AllowFood>食物</SA_AllowFood>
+  <SA_AllowResources>资源（钢铁、木材、零部件...）</SA_AllowResources>
+  <SA_AllowCorpses>尸体</SA_AllowCorpses>
+  <SA_AllowChunks>石块和�ite渣</SA_AllowChunks>
+  <SA_AllowBodyParts>身体部件和仿生体</SA_AllowBodyParts>
+  <SA_AllowMedicine>医药</SA_AllowMedicine>
+  <SA_AllowArtifacts>神器和特殊物品</SA_AllowArtifacts>
+  <SA_AllowOther>其他所有物品</SA_AllowOther>
+
+  <!-- Hints -->
+  <SA_DoubleForbidHint>提示：对物品禁止两次可将其永久保持禁止状态。Smart Allow 将不再对其进行操作。</SA_DoubleForbidHint>
+
+</LanguageData>

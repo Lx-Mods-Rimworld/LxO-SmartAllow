@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Settings -->
+  <SA_Enabled>Enable Smart Allow</SA_Enabled>
+  <SA_Enabled_Desc>Automatically allow forbidden items based on category rules.</SA_Enabled_Desc>
+  <SA_WaitForCombat>Wait for combat to end</SA_WaitForCombat>
+  <SA_WaitForCombat_Desc>Hold auto-allow during active raids. Items are allowed once all hostiles are down or gone.</SA_WaitForCombat_Desc>
+  <SA_HomeZoneOnly>Home zone only</SA_HomeZoneOnly>
+  <SA_HomeZoneOnly_Desc>Only auto-allow items within your home zone.</SA_HomeZoneOnly_Desc>
+
+  <!-- Categories -->
+  <SA_CategoryHeader>Auto-allow by category:</SA_CategoryHeader>
+  <SA_AllowWeapons>Weapons</SA_AllowWeapons>
+  <SA_AllowApparel>Apparel</SA_AllowApparel>
+  <SA_AllowDrugs>Drugs</SA_AllowDrugs>
+  <SA_AllowFood>Food</SA_AllowFood>
+  <SA_AllowResources>Resources (steel, wood, components...)</SA_AllowResources>
+  <SA_AllowCorpses>Corpses</SA_AllowCorpses>
+  <SA_AllowChunks>Stone chunks and slag</SA_AllowChunks>
+  <SA_AllowBodyParts>Body parts and bionics</SA_AllowBodyParts>
+  <SA_AllowMedicine>Medicine</SA_AllowMedicine>
+  <SA_AllowArtifacts>Artifacts and special items</SA_AllowArtifacts>
+  <SA_AllowOther>Everything else</SA_AllowOther>
+
+  <!-- Hints -->
+  <SA_DoubleForbidHint>Tip: Forbid an item twice to permanently keep it forbidden. Smart Allow will stop touching it.</SA_DoubleForbidHint>
+
+</LanguageData>

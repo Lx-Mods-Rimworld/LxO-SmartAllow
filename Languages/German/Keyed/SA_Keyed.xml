@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Settings -->
+  <SA_Enabled>Smart Allow aktivieren</SA_Enabled>
+  <SA_Enabled_Desc>Verbotene Gegenstände automatisch anhand von Kategorieregeln erlauben.</SA_Enabled_Desc>
+  <SA_WaitForCombat>Auf Kampfende warten</SA_WaitForCombat>
+  <SA_WaitForCombat_Desc>Automatisches Erlauben während aktiver Überfälle zurückhalten. Gegenstände werden erlaubt, sobald alle Feinde besiegt oder verschwunden sind.</SA_WaitForCombat_Desc>
+  <SA_HomeZoneOnly>Nur in Heimatzone</SA_HomeZoneOnly>
+  <SA_HomeZoneOnly_Desc>Gegenstände nur innerhalb der Heimatzone automatisch erlauben.</SA_HomeZoneOnly_Desc>
+
+  <!-- Categories -->
+  <SA_CategoryHeader>Automatisch erlauben nach Kategorie:</SA_CategoryHeader>
+  <SA_AllowWeapons>Waffen</SA_AllowWeapons>
+  <SA_AllowApparel>Kleidung</SA_AllowApparel>
+  <SA_AllowDrugs>Drogen</SA_AllowDrugs>
+  <SA_AllowFood>Nahrung</SA_AllowFood>
+  <SA_AllowResources>Rohstoffe (Stahl, Holz, Bauteile...)</SA_AllowResources>
+  <SA_AllowCorpses>Leichen</SA_AllowCorpses>
+  <SA_AllowChunks>Steinbrocken und Schlacke</SA_AllowChunks>
+  <SA_AllowBodyParts>Körperteile und Bionik</SA_AllowBodyParts>
+  <SA_AllowMedicine>Medizin</SA_AllowMedicine>
+  <SA_AllowArtifacts>Artefakte und besondere Gegenstände</SA_AllowArtifacts>
+  <SA_AllowOther>Alles andere</SA_AllowOther>
+
+  <!-- Hints -->
+  <SA_DoubleForbidHint>Tipp: Einen Gegenstand zweimal verbieten, um ihn dauerhaft verboten zu halten. Smart Allow lässt ihn dann in Ruhe.</SA_DoubleForbidHint>
+
+</LanguageData>

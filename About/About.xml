@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>LxO - Smart Allow</name>
+  <author>Lexxers</author>
+  <url>https://github.com/Lx-Mods-Rimworld/LxO-SmartAllow</url>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <packageId>Lexxers.SmartAllow</packageId>
+  <description>Automatically allows forbidden items with smart per-category filtering.
+
+By default, all dropped items are auto-allowed. Open mod settings to configure which categories to exclude -- drugs, weapons, apparel, food, or anything else.
+
+Items forbidden during active combat are held until combat ends, then auto-allowed based on your rules. Double-forbid an item to permanently keep it forbidden.
+
+No dependencies. No performance impact. Just works.</description>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>ludeon.rimworld</li>
+  </loadAfter>
+</ModMetaData>
