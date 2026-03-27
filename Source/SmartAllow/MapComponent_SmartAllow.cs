@@ -15,8 +15,14 @@ namespace SmartAllow
         // Items the player has double-forbidden (forbid -> auto-allow -> forbid again = permanent)
         private HashSet<int> permanentlyForbidden = new HashSet<int>();
 
-        // Items we've auto-allowed once (used for double-forbid detection)
-        private HashSet<int> autoAllowedOnce = new HashSet<int>();
+        // Items we've auto-allowed: thingID -> tick when auto-allowed
+        // Used for double-forbid detection with a cooldown to avoid false positives
+        // from game code re-forbidding items (death, drop, etc.)
+        private Dictionary<int, int> autoAllowedTicks = new Dictionary<int, int>();
+
+        // Cooldown: if item is re-forbidden within this many ticks after auto-allow,
+        // it's game code, not the player. Only count as double-forbid after this window.
+        private const int DoubleForbidCooldown = 500; // ~8 seconds
 
         // Track combat state
         private bool wasInCombat;
@@ -53,6 +59,7 @@ namespace SmartAllow
 
         private void ProcessForbiddenItems()
         {
+            int tick = Find.TickManager.TicksGame;
             List<Thing> allThings = map.listerThings.AllThings;
             for (int i = 0; i < allThings.Count; i++)
             {
@@ -69,13 +76,21 @@ namespace SmartAllow
                 // Skip permanently forbidden items
                 if (permanentlyForbidden.Contains(thingID)) continue;
 
-                // Double-forbid detection: if we already auto-allowed this and the player
-                // forbade it again, mark it as permanently forbidden
-                if (autoAllowedOnce.Contains(thingID))
+                // Double-forbid detection: if we auto-allowed this item AND enough time
+                // passed (cooldown), the player must have re-forbidden it = permanent lock.
+                // If re-forbidden within the cooldown, it was game code (death, drop, etc.)
+                // and we just auto-allow again.
+                if (autoAllowedTicks.TryGetValue(thingID, out int allowedTick))
                 {
-                    permanentlyForbidden.Add(thingID);
-                    autoAllowedOnce.Remove(thingID);
-                    continue;
+                    int elapsed = tick - allowedTick;
+                    if (elapsed > DoubleForbidCooldown)
+                    {
+                        // Player re-forbade after cooldown = intentional = permanent lock
+                        permanentlyForbidden.Add(thingID);
+                        autoAllowedTicks.Remove(thingID);
+                        continue;
+                    }
+                    // Within cooldown = game code re-forbade, just allow again (fall through)
                 }
 
                 // Home zone check
@@ -90,7 +105,7 @@ namespace SmartAllow
 
                 // Auto-allow
                 forbiddable.Forbidden = false;
-                autoAllowedOnce.Add(thingID);
+                autoAllowedTicks[thingID] = tick;
             }
 
             // Clean up tracking sets periodically (every 2500 ticks = ~42 seconds)
@@ -106,7 +121,8 @@ namespace SmartAllow
             foreach (var pawn in map.mapPawns.AllPawnsSpawned)
             {
                 if (pawn.Dead || pawn.Downed) continue;
-                if (pawn.HostileTo(Faction.OfPlayer))
+                Faction player = Find.FactionManager?.OfPlayer;
+                if (player != null && pawn.HostileTo(player))
                     return true;
             }
             return false;
@@ -115,15 +131,20 @@ namespace SmartAllow
         private void CleanupTracking()
         {
             // Remove entries for things that no longer exist
-            autoAllowedOnce.RemoveWhere(id =>
+            // Clean autoAllowedTicks: remove entries for things that no longer exist
+            var keysToRemove = new List<int>();
+            foreach (var kvp in autoAllowedTicks)
             {
+                bool found = false;
                 var things = map.listerThings.AllThings;
                 for (int i = 0; i < things.Count; i++)
                 {
-                    if (things[i].thingIDNumber == id) return false;
+                    if (things[i].thingIDNumber == kvp.Key) { found = true; break; }
                 }
-                return true; // Thing gone, remove tracking
-            });
+                if (!found) keysToRemove.Add(kvp.Key);
+            }
+            for (int i = 0; i < keysToRemove.Count; i++)
+                autoAllowedTicks.Remove(keysToRemove[i]);
 
             permanentlyForbidden.RemoveWhere(id =>
             {
@@ -145,10 +166,16 @@ namespace SmartAllow
             if (thing == null) return;
             int id = thing.thingIDNumber;
 
-            if (autoAllowedOnce.Contains(id))
+            if (autoAllowedTicks.TryGetValue(id, out int allowedTick))
             {
-                permanentlyForbidden.Add(id);
-                autoAllowedOnce.Remove(id);
+                int elapsed = Find.TickManager.TicksGame - allowedTick;
+                if (elapsed > DoubleForbidCooldown)
+                {
+                    // Player deliberately re-forbade after cooldown
+                    permanentlyForbidden.Add(id);
+                }
+                // Either way, remove from tracking
+                autoAllowedTicks.Remove(id);
             }
         }
 
@@ -161,16 +188,17 @@ namespace SmartAllow
             if (thing == null) return;
             int id = thing.thingIDNumber;
             permanentlyForbidden.Remove(id);
-            autoAllowedOnce.Remove(id);
+            autoAllowedTicks.Remove(id);
         }
 
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Collections.Look(ref permanentlyForbidden, "sa_permForbidden", LookMode.Value);
-            Scribe_Collections.Look(ref autoAllowedOnce, "sa_autoAllowed", LookMode.Value);
+            // autoAllowedTicks is transient -- don't save, rebuild from scratch on load
+            // (avoids save compat issues from changing HashSet to Dictionary)
             if (permanentlyForbidden == null) permanentlyForbidden = new HashSet<int>();
-            if (autoAllowedOnce == null) autoAllowedOnce = new HashSet<int>();
+            if (autoAllowedTicks == null) autoAllowedTicks = new Dictionary<int, int>();
         }
     }
 }
