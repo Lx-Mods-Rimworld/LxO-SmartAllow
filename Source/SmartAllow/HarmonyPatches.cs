@@ -38,34 +38,6 @@ namespace SmartAllow
         }
     }
 
-    /// <summary>
-    /// Detect when the player manually forbids/allows something.
-    /// Used for double-forbid (permanent) detection.
-    /// </summary>
-    [HarmonyPatch(typeof(CompForbiddable), nameof(CompForbiddable.Forbidden), MethodType.Setter)]
-    public static class Patch_ForbiddenSet
-    {
-        public static void Postfix(CompForbiddable __instance, bool value)
-        {
-            try
-            {
-                if (!SmartAllowSettings.enabled) return;
-
-                Thing thing = __instance.parent;
-                if (thing == null || thing.Map == null) return;
-
-                // Only track player-initiated forbid/allow changes
-                // We detect this by checking if a human is interacting
-                // (the auto-allow system sets Forbidden directly, but we
-                // track our own auto-allows in the MapComponent)
-                var comp = thing.Map.GetComponent<MapComponent_SmartAllow>();
-                if (comp == null) return;
-
-                // We can't easily distinguish player vs code forbid changes here.
-                // The MapComponent handles the double-forbid logic internally
-                // by tracking what it auto-allowed.
-            }
-            catch (Exception) { }
-        }
-    }
+    // Patch_ForbiddenSet removed: was a dead stub that fired on every forbid/allow
+    // operation but did no work. Double-forbid logic is handled in MapComponent.
 }
