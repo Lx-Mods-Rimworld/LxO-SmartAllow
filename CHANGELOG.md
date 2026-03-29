@@ -2,6 +2,11 @@
 
 All notable changes to this mod will be documented in this file.
 
+## [1.0.2] - 2026-03-29
+
+### Improvements
+- Removed unused Patch_ForbiddenSet hook that fired on every forbid/allow operation for no benefit. Minor performance improvement.
+
 ## [1.0.1] - 2026-03-27
 
 ### Fixes
